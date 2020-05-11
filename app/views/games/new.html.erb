@@ -2,17 +2,17 @@
 <div class="container">
   <h1>New game</h1>
 
-  <div id="letter-container">
+  <ul id="letter-container">
     <% @letters.each do |letter| %>
-    <div class="letter"> <%= letter %> </div>
+    <li class="letter"> <%= letter %> </li>
     <% end %>
-  </div>
+  </ul>
 
   <p>What is the longest word you can find ?</p>
   <form action="/score" method="post">
     <input type="text" name="word" id="answer">
-    <input type="submit" value="Play">
-    <%= hidden_field_tag :letters, @letters %>
+    <input type="submit" value="Play" name="play">
+    <%= hidden_field_tag 'letters', @letters %>
     <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
   </form>
 </div>
