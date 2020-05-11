@@ -1,0 +1,7 @@
+<h1>Result</h1>
+
+<p><%= @response %></p>
+<p><strong>Round score :</strong> <%= @round_points %></p>
+<p><strong>Your global score :</strong> <%= session[:global_points] %></p>
+
+<%= link_to 'play again', '/new' %>
